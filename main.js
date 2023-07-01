@@ -15,19 +15,18 @@ div.style.backgroundColor = "green";
 const changeHeight = () => {
   if (size >= window.innerWidth / 2) {
     flag = !flag;
+    div.style.backgroundColor = "green";
   } else if (size <= 0) {
     flag = !flag;
-  }
-
-  if (flag === true) {
-    size += 10;
-    div.style.height = size + "px";
-    div.style.backgroundColor = "green";
-  } else {
-    size -= 10;
-    div.style.height = size + "px";
     div.style.backgroundColor = "red";
   }
+
+  if (flag) {
+    size += 10;
+  } else {
+    size -= 10;
+  }
+  div.style.height = size + "px";
 };
 
 window.addEventListener("scroll", changeHeight);
